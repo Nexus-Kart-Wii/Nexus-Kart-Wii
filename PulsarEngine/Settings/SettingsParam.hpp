@@ -81,7 +81,6 @@ enum KOSettings {
     SETTINGKO_FINAL = 1,
     SETTINGKO_KOPERRACE = 0 + 6,
     SETTINGKO_RACESPERKO = 1 + 6,
-
 };
 
 //MENU SETTINGS

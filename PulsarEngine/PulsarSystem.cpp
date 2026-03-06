@@ -121,6 +121,7 @@ void System::UpdateContext() {
     bool isCT = true;
     bool isHAW = false;
     bool isKO = false;
+    bool isKOFinal = settings.GetUserSettingValue(Settings::SETTINGSTYPE_KO, SETTINGKO_FINAL) == KOSETTING_FINAL_ALWAYS;
     bool isOTT = false;
     bool isMiiHeads = settings.GetSettingValue(Settings::SETTINGSTYPE_RACE, SETTINGRACE_RADIO_MII);
 
@@ -147,6 +148,7 @@ void System::UpdateContext() {
                 newContext = netMgr.hostContext;
                 isHAW = newContext & (1 << PULSAR_HAW);
                 isKO = newContext & (1 << PULSAR_MODE_KO);
+                isKOFinal = newContext & (1 << PULSAR_KOFINAL);
                 isOTT = newContext & (1 << PULSAR_MODE_OTT);
                 isMiiHeads = newContext & (1 << PULSAR_MIIHEADS);
                 if(isOTT) {

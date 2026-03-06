@@ -42,7 +42,7 @@ Kart::Stats* ApplySpeedModifier(KartId kartId, CharacterId characterId) {
     float factor = 1.0f;
     if (System::sInstance->IsContext(PULSAR_200)) {
         if (System::sInstance->IsContext(PULSAR_LEGACY_200_MAX_SPEED)) {
-            factor = legacySpeedFactor * 0.8f;
+            factor = legacySpeedFactor * 0.9f;
         }
         else factor = speedFactor;
     }

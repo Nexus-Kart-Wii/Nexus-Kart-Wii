@@ -21,12 +21,13 @@ The Pulladium fork exists to continue development of Pulsar, and to provide new 
 - Saucy: Fixed the vanilla track order when playing worldwides
 - Toadette Hack Fan: Significantly improved NTSC-K support
 - Erythtini: Fixed ObjFlow and GeoHitTables not loading from track szs ./Common/ folder, as it was in LE-CODE (files on .szs root will take priority)
+- Saucy: Fixed an issue where crates do not spawn in the correct place due to overlapping track position
 
 ## Developer additions
 
 - Improved versions.txt (thanks Toadette Hack Fan!)
 - Expanded symbols.txt (thanks Toadette Hack Fan!)
-- BuildPulsar.bat now includes the standard CodeWarrior compiler path by default
+- [Completely rewritten build script](../main/BuildPulsar.py) with significant compile time improvements over the old .bat
 
 ## Base Pulsar features
 
@@ -47,8 +48,8 @@ UI:
 - A speedometer that is flush with the game UI
 - In-game crediting of track authors
 - Between Races Change Combo, which has its own UI along with a randomize button
-- Team selection, where the host of a room can manually set the team of each player. Moreover, team VS has been edited to play exactly as normal VS while keeping the coloured minimap icons and the scoreboard after races.
-- Boot in wiimmfi directly
+- Team selection, where the host of a room can manually set the team of each player.
+- Boot in Wiilink WFC directly
 - Better ghost replay which allows multi ghost watching and point-of-view switching
 
 
@@ -67,7 +68,7 @@ Gameplay:
 - CLF78 and stebler's feather
 - Support for custom CC distribution
 - COOB (both kHacker35000vr's and Riidefi's versions)
-
+- Team VS has been edited to play exactly as normal VS does, while keeping the coloured minimap icons and the scoreboard after races.
 
 Network:
 - Rooms that can only be joined by people on the same pack (including the same version)
@@ -78,3 +79,4 @@ Network:
 
 Credits:
 - Treeki for [Kamek](https://github.com/Treeki/Kamek/tree/master). The engine has been ever so slightly modified to create a new output format which combines the usual 4 binaries. 
+- Gabriela for XPF support and USB GCN support from [Aurora](https://github.com/Gabriela-Orzechowska/MKW-Aurora). An exception from the GPLv3 licensing was provided, allowing these files to be used in this project.

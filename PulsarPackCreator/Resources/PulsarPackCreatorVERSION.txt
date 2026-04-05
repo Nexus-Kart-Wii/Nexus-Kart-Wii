@@ -1,12 +1,11 @@
 ·Updated to 2.1
-Welcome to Pulladium!
 
 Creator Changes:
 -"Build Config Only" option now no longer erases pack folder
 -Added Moonview theme option
 -Added legacy 200cc max speed option (see engine changes)
 -Changed update button to link to the Pulladium releases page
--Removed auto updater (for now)
+-Removed auto updater (for now) and replaced with link to Pulladium releases page
 
 Engine Changes:
 -mkwcat: WiiLink WFC support
@@ -20,8 +19,6 @@ Engine Changes:
 -Saucy: Fixed the vanilla track order when playing worldwides
 -Toadette Hack Fan: Significantly improved NTSC-K support
 -Toadette Hack Fan: Added local multiplayer settings button
-
-=== Original Pulsar changelogs ===
 
 ·Updated to 2.0.1
 Remaining bugs (if you get them, PLEASE report how it happened):

@@ -63,3 +63,4 @@ BuildTesting.bat
 PulsarPackCreator/Executable/Pulsar Pack Creator.dll.config
 *.v2
 BuildPulsar.py
+build/Code.pul

@@ -2020,3 +2020,16 @@ RespawnImpl__Q27Objects11ItemDropperFv = 0x8076ed70
 # frameskip
 beginFrame = 0x8020fe24
 Update__20GameScreenEffectsMgrFv = 0x8054f1b0
+
+# YesNoMessageBox
+
+#YesNoMessageBox
+SetMessageBoxMsg__Q25Pages5YesNoFUiPQ24Text4Info = 0x806525fc
+PrepareButton__Q25Pages5YesNoFUiUiPQ24Text4InfoUi39PtmfHolder_2A<4Page,v,Ui,R10PushButton> = 0x80652604
+RemoveTopLayerPage__7SectionFv = 0x80623288
+__ct__18ManipulatorManagerFv = 0x805eeb68
+__dt__18ManipulatorManagerFv = 0x805eeb8c
+__ct__12FriendButtonFv = 0x805d380c
+__dt__12FriendButtonFv = 0x805d3850
+SetMessageBoxMsg__Q25Pages5YesNoFUiPQ24Text4Info = 0x806525fc
+PrepareButton__Q25Pages5YesNoFUiUiPQ24Text4InfoUiRC39PtmfHolder_2A<4Page,v,Ui,R10PushButton> = 0x80652604

@@ -5,6 +5,9 @@ BuildCode.py
 /cw
 /PulsarPackCreator/Executable/output
 /PulsarPackCreator/Executable/input
+/input
+/output
+/temp
 /testing
 /resources
 /releases

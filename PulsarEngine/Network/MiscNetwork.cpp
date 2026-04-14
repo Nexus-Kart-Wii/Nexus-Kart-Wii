@@ -22,6 +22,10 @@ kmWrite32(0x8053F124, 0x38000000);
 kmWrite32(0x80549898, 0x38600000);
 kmWrite32(0x8054989c, 0x4e800020);
 
+//Instant Course Voting [Ro]
+kmWrite32(0x80643BC4, 0x60000000);
+kmWrite32(0x80643C2C, 0x60000000);
+
 static void CalcSectionAfterRace(SectionMgr* sectionMgr, SectionId id) {
 
     UI::ChooseNextTrack* choosePage = reinterpret_cast<UI::ExpSection*>(sectionMgr->curSection)->GetPulPage<UI::ChooseNextTrack>();

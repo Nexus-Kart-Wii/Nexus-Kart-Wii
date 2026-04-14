@@ -18,6 +18,10 @@ kmWrite32(0x8053EF6C, 0x38000000);
 kmWrite32(0x8053F0B4, 0x38000000);
 kmWrite32(0x8053F124, 0x38000000);
 
+//Never Get Suspended
+kmWrite32(0x80549898, 0x38600000);
+kmWrite32(0x8054989c, 0x4e800020);
+
 static void CalcSectionAfterRace(SectionMgr* sectionMgr, SectionId id) {
 
     UI::ChooseNextTrack* choosePage = reinterpret_cast<UI::ExpSection*>(sectionMgr->curSection)->GetPulPage<UI::ChooseNextTrack>();

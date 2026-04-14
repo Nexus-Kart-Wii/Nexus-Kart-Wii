@@ -5,6 +5,8 @@ BuildCode.py
 /cw
 /PulsarPackCreator/Executable/output
 /PulsarPackCreator/Executable/input
+/Pulsar_Pack_Creator.exe
+*:Zone.Identifier
 /input
 /output
 /temp

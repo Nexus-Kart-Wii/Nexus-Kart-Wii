@@ -146,6 +146,7 @@ Patch_HostHeader = 0x800ed868
 Patch_WiimmfiHook1 = 0x800ee3a0
 s_auth_error = 0x802f1cB8
 loginRegion__3DWC = 0x80384fd0
+U8_WWS_CHECK= 0x800003CC
 DWC_AuthServer = 0x80386338
 authServer__3DWC = 0x80386338
 s_auth_work = 0x8038633c
@@ -2033,3 +2034,17 @@ __ct__12FriendButtonFv = 0x805d380c
 __dt__12FriendButtonFv = 0x805d3850
 SetMessageBoxMsg__Q25Pages5YesNoFUiPQ24Text4Info = 0x806525fc
 PrepareButton__Q25Pages5YesNoFUiUiPQ24Text4InfoUiRC39PtmfHolder_2A<4Page,v,Ui,R10PushButton> = 0x80652604
+
+
+
+#NKW Features
+OnlinePausingEnd1= 0x80623058
+OnlinePausingEnd2= 0x80622458
+OnlinePausingEnd3= 0x8062ECC8
+OnlinePausingEnd4= 0x807F0778
+OnlinePausingEnd5= 0x80858E28
+OnlinePausingEnd6= 0x80858E30
+OnlinePausingEnd7= 0x8085905C
+OnlinePausingEnd8= 0x808569F0
+OnlinePausingEnd9= 0x8085A460
+OnlinePausingEndA= 0x80554E50

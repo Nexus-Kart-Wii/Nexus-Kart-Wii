@@ -10,7 +10,7 @@ namespace Settings {
 
 class Params {
 public:
-    static const int pulsarPageCount = 5;
+    static const int pulsarPageCount = 6;
     static const int userPageCount = 0;
     static const int pageCount = pulsarPageCount + userPageCount;
 
@@ -32,6 +32,7 @@ enum Type {
     SETTINGSTYPE_HOST,
     SETTINGSTYPE_OTT,
     SETTINGSTYPE_KO,
+    SETTINGSTYPE_NEXUS,
 };
 
 //If you want to add settings to your packs, they go in this enum, and GetUserSettingValue should be used to obtain the value of a given setting
@@ -217,6 +218,23 @@ enum KOSettingRacesPerKO {
     KOSETTING_RACESPERKO_4
 };
 //KOSETTINGS
+
+//NEXUS SETTINGS
+enum NexusSettings {
+    TOGGLE_MEGA_TC = 0,
+    TOGGLE_FEATHER = 1,
+};
+
+enum NexusSettingMegaTC {
+    NEXUSSETTING_MEGATC_DISABLED = 0x0,
+    NEXUSSETTING_MEGATC_ENABLED = 0x1
+};
+
+enum NexusSettingFeather {
+    NEXUSSETTING_FEATHER_DISABLED = 0x0,
+    NEXUSSETTING_FEATHER_ENABLED = 0x1
+};
+//NEXUS SETTINGS
 
 }//namespace Pulsar
 

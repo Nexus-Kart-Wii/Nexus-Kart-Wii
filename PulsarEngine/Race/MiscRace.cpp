@@ -133,13 +133,14 @@ kmWrite24(0x808A9C16, 'PUL'); //item_window_new -> item_window_PUL
 const char* ChangeItemWindowPane(ItemId id, u32 itemCount) {
     const bool feather = System::sInstance->IsContext(PULSAR_FEATHER);
     const bool megaTC = System::sInstance->IsContext(PULSAR_MEGATC);
+    const bool isMegaTCActive = RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_MEGA_TC) == 1;
     const char* paneName;
     if (id == BLOOPER && feather) {
         if (itemCount == 2) paneName = "feather_2";
         else if (itemCount == 3) paneName = "feather_3";
         else paneName = "feather";
     }
-    else if (id == THUNDER_CLOUD && megaTC && RKNet::Controller::sInstance->roomType != RKNet::ROOMTYPE_VS_WW) paneName = "megaTC";
+    else if (id == THUNDER_CLOUD && megaTC && isMegaTCActive && RKNet::Controller::sInstance->roomType != RKNet::ROOMTYPE_VS_WW) paneName = "megaTC";
     else paneName = GetItemIconPaneName(id, itemCount);
     return paneName;
 }

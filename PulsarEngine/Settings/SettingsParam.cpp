@@ -21,7 +21,7 @@ u8 Params::buttonsPerPagePerRow[Params::pageCount][Params::maxRadioCount] = //fi
     { 2, 4, 2, 0, 0, 0 }, //Host
     { 3, 3, 2, 2, 2, 0 }, //OTT
     { 2, 2, 0, 0, 0, 0 }, //KO
-    { 2, 2, 0, 0, 0, 0 }, //Nexus
+    { 2, 0, 0, 0, 0, 0 }, //Nexus
     //{}, //User
 };
 

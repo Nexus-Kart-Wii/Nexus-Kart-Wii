@@ -4,9 +4,7 @@
 #include <MarioKartWii/Driver/DriverManager.hpp>
 #include <MarioKartWii/Input/InputManager.hpp>
 #include <MarioKartWii/CourseMgr.hpp>
-#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <PulsarSystem.hpp>
-#include <Settings/Settings.hpp>
 
 
 namespace Pulsar {
@@ -28,13 +26,13 @@ void UseFeather(Item::Player& itemPlayer) {
 }
 
 void UseBlooperOrFeather(Item::Player& itemPlayer) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) UseFeather(itemPlayer);
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) UseFeather(itemPlayer);
     else itemPlayer.UseBlooper();
 };
 kmWritePointer(0x808A5894, UseBlooperOrFeather);
 
 void ReplaceBlooperUseOtherPlayers(Item::GessoMgr& gessoMgr, u8 id) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) {
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) {
         UseFeather(Item::Manager::sInstance->players[id]);
     }
     else gessoMgr.DeployBlooper(id);
@@ -49,7 +47,7 @@ kmCall(0x80796d8c, ReplaceBlooperUseOtherPlayers); //replaces the small blooper 
 static bool ConditionalIgnoreInvisibleWalls(float radius, CourseMgr& mgr, const Vec3& position, const Vec3& prevPosition,
     KCLBitfield acceptedFlags, CollisionInfo* info, KCLTypeHolder& kclFlags)
 {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) {
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) {
         register Kart::Collision* collision;
         asm(mr collision, r15;);
         Kart::Status* status = collision->pointers->kartStatus;
@@ -63,7 +61,7 @@ static bool ConditionalIgnoreInvisibleWalls(float radius, CourseMgr& mgr, const 
 kmCall(0x805b68dc, ConditionalIgnoreInvisibleWalls);
 
 u8 ConditionalFastFallingBody(const Kart::Sub& sub) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) {
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) {
         const Kart::PhysicsHolder& physicsHolder = sub.GetPhysicsHolder();
         const Kart::Status* status = sub.pointers->kartStatus;
         if(status->bitfield0 & 0x40000000 && status->jumpPadType == 0x7 && status->airtime >= 2 && (!status->bool_0x97 || status->airtime > 19)) {
@@ -79,7 +77,7 @@ kmCall(0x805967ac, ConditionalFastFallingBody);
 
 
 void ConditionalFastFallingWheels(float unk_float, Kart::WheelPhysicsHolder* wheelPhysicsHolder, Vec3& gravityVector, const Mtx34& wheelMat) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) {
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) {
         Kart::Status* status = wheelPhysicsHolder->pointers->kartStatus;
         if(status->bitfield0 & 0x40000000 && status->jumpPadType == 0x7) {
             if(status->airtime == 0) status->bool_0x97 = ((status->bitfield0 & 0x80) != 0) ? true : false;
@@ -97,7 +95,7 @@ kmCall(0x805973b4, ConditionalFastFallingWheels);
 
 
 s32 HandleGroundFeatherCollision(const Kart::Collision& collision) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) {
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) {
         Item::Player& itemPlayer = Item::Manager::sInstance->players[collision.GetPlayerIdx()];
         itemPlayer.inventory.currentItemCount += 1;
         UseFeather(itemPlayer);
@@ -107,7 +105,7 @@ s32 HandleGroundFeatherCollision(const Kart::Collision& collision) {
 kmWritePointer(0x808b54e8, HandleGroundFeatherCollision);
 
 static u32 ConditionalBlooperTimer(u32 timer) {
-    if(System::sInstance->IsContext(PULSAR_FEATHER) && (RKNet::Controller::sInstance->GetConnectionState() == RKNet::CONNECTIONSTATE_ROOM || Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_NEXUS, TOGGLE_FEATHER) == 1)) timer = 0;
+    if(System::sInstance->IsContext(PULSAR_FEATHER)) timer = 0;
     else timer--;
     return timer;
 }

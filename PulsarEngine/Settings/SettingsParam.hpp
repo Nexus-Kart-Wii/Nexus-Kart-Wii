@@ -222,7 +222,7 @@ enum KOSettingRacesPerKO {
 //NEXUS SETTINGS
 enum NexusSettings {
     TOGGLE_MEGA_TC = 0,
-    TOGGLE_FEATHER = 1,
+    // TOGGLE_FEATHER = 1,
 };
 
 enum NexusSettingMegaTC {
@@ -230,10 +230,10 @@ enum NexusSettingMegaTC {
     NEXUSSETTING_MEGATC_ENABLED = 0x1
 };
 
-enum NexusSettingFeather {
-    NEXUSSETTING_FEATHER_DISABLED = 0x0,
-    NEXUSSETTING_FEATHER_ENABLED = 0x1
-};
+// enum NexusSettingFeather {
+//     NEXUSSETTING_FEATHER_DISABLED = 0x0,
+//     NEXUSSETTING_FEATHER_ENABLED = 0x1
+// };
 //NEXUS SETTINGS
 
 }//namespace Pulsar
